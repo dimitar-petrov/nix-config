@@ -31,11 +31,11 @@
     ...
   }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos-test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/nixos
+          ./hosts/nixos-test
 
           home-manager.nixosModules.home-manager
           {
