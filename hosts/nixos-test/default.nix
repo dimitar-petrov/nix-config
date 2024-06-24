@@ -28,8 +28,8 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.defaultGateway = "192.168.122.1";
+  # networking.networkmanager.enable = true;
+  # networking.defaultGateway = "192.168.122.1";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
