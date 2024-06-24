@@ -15,19 +15,10 @@
     ];
 
   # Bootloader.
-  boot.loader = {
-    # efi = {
-    #   canTouchEfiVariables = true;
-    #   efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
-    # };
-    grub = {
-      enable = true;
-      device = "/dev/vda";  #  "nodev"
-      efiSupport = false;
-      useOSProber = true;
-      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-    };
-  };
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos-test"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -38,7 +29,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.defaultGateway = "192.168.5.201";
+  networking.defaultGateway = "192.168.122.1";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
